@@ -4,6 +4,9 @@ WORKDIR /app
 
 COPY . .
 
+# 🔴 IMPORTANT LINE
+RUN chmod +x mvnw
+
 RUN ./mvnw clean package
 
 EXPOSE 8080
