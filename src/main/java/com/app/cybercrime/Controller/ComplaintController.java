@@ -127,7 +127,7 @@ public class ComplaintController {
         return repo.findAll();
     }
  // Get complaint by trackingId
-   @GetMapping("/{trackingId}")
+  @GetMapping("/{trackingId}")
 public ResponseEntity<?> getComplaintByTrackingId(@PathVariable String trackingId) {
     Optional<Complaint> complaint = repo.findByTrackingId(trackingId);
 
@@ -138,6 +138,7 @@ public ResponseEntity<?> getComplaintByTrackingId(@PathVariable String trackingI
                 .body("Invalid Tracking ID");
     }
 }
+
 
 
 }
