@@ -12,11 +12,16 @@ import com.app.cybercrime.repository.UserRepository;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class AuthController {
 
     @Autowired
     private UserRepository repo;
+
+    @PostMapping("/register")
+    public User register(@RequestBody User user) {
+        return repo.save(user);
+    }
 
     @PostMapping("/login")
     public User login(@RequestBody User req) {
@@ -31,7 +36,7 @@ public class AuthController {
             throw new RuntimeException("Invalid password");
         }
 
-        // ✅ password match → user return
         return user;
     }
 }
+

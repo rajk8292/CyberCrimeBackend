@@ -25,6 +25,8 @@ public class CrimeCaseController {
 
     @Autowired
     private CrimeCaseRepository repo;
+    
+    
 
     @PostMapping
     public CrimeCase createCase(@RequestBody CrimeCase c){

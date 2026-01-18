@@ -14,7 +14,9 @@ public class User {
 
     private String username;
     private String password;
-    private String role; // ADMIN / POLICE
+    private String role;
+    private String email;
+    // ADMIN / POLICE
 	public Long getId() {
 		return id;
 	}
@@ -38,6 +40,12 @@ public class User {
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
     
 }
